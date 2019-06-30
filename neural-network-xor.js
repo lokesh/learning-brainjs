@@ -1,7 +1,8 @@
-
 const net = new brain.NeuralNetwork({
   hiddenLayers: [3],
 });
+
+//
 
 const trainingData = [
   { input: [0, 0], output: [0] },
@@ -13,11 +14,12 @@ const trainingData = [
 // Forward propagation - Make prediction
 // Back propagation - Measure distance from goal. Learn.
 net.train(trainingData, {
+  // iterations: 10000,
   // log: (error) => console.log(error),
   // logPeriod: 100,
 });
 
+console.log(net.run([0, 0]));
+console.log(net.run([0, 1]));
 console.log(net.run([1, 0]));
-// console.log(net.run([0, 1]));
-// console.log(net.run([1, 0]));
-// console.log(net.run([1, 1]));
+console.log(net.run([1, 1]));
